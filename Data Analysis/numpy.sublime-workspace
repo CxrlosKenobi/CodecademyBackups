@@ -1,0 +1,897 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"i",
+				"i"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"conncet",
+				"connection"
+			],
+			[
+				"data",
+				"DATABASE"
+			],
+			[
+				"agr",
+				"Agreggates"
+			],
+			[
+				"cer.",
+				"cer.hclust"
+			],
+			[
+				"kmean",
+				"kmeans.output"
+			],
+			[
+				"tita",
+				"titanic"
+			],
+			[
+				"clumn",
+				"column2"
+			],
+			[
+				"t",
+				"t"
+			],
+			[
+				"ini",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"d",
+				"defs\tMethod"
+			],
+			[
+				"vC",
+				"vCardFile"
+			],
+			[
+				"w",
+				"w"
+			],
+			[
+				"outpu",
+				"outputFile"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/mac/Desktop/test/test.py",
+			"settings":
+			{
+				"buffer_size": 4867,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mac/Documents/Code/Codecademy/Data Science/Seaborn.py",
+			"settings":
+			{
+				"buffer_size": 1990,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "numpy.py",
+			"settings":
+			{
+				"buffer_size": 25,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "import numpy as np"
+			}
+		},
+		{
+			"contents": "# SQL (Structures Query Language)\n\nSELECT * FROM celebs;\n\nCREATE TABLE celebs (\n   id INTEGER PRIMARY KEY, \n   name TEXT UNIQUE,\n   age INTEGER\n   date_of_birth TEXT NOT NULL,\n   date_of_death TEXT DEFAULT 'Not Applicable'\n);\n\nINSERT INTO celebs (id, name, age) \nVALUES (2, 'Beyonce Knowles', 33); \n\nALTER TABLE celebs \nADD COLUMN twitter_handle TEXT;\n\nUPDATE celebs \nSET twitter_handle = '@taylorswift13' \nWHERE id = 4; \n\nDELETE FROM celebs \nWHERE twitter_handle IS NULL;\n\nSELECT *\nFROM movies\nWHERE title LIKE 'Se__n' OR title LIKE '%Se%' OR IS NULL;\n\nSELECT name,\n CASE\n  WHEN genre = 'romance' OR genre = 'comedy' \n   THEN 'Chill'\n  ELSE 'Intense'\n END AS 'Mood'\nFROM movies;\n\nSELECT game, COUNT(*)\nFROM stream\nGROUP BY game\nORDER BY COUNT(*) DESC;\n\nSELECT time,\n  strftime('%S', time) # We selected the (formatted time YYYY-MM-DD HH:MM:SS)\nFROM stream\nGROUP BY 1\nLIMIT 20 ;\n\n\nSELECT year,\n  genre,\n  COUNT(name)\nFROM movies\nGROUP BY 1, 2\nHAVING COUNT(name) > 10;\n\n# Combining tables\nSELECT *\nFROM orders\nJOIN customers\n  ON orders.customer_id = customers.customer_id;\n\n# Inner Join\nSELECT COUNT(*) \nFROM newspaper\nJOIN online\n\tON newspaper.id = online.id;\n\n# Left Join\nSELECT * \nFROM table1\nLEFT JOIN table2\n  ON table1.c2 = table2.c2;\n\n# Cross Joins\nSELECT shirts.shirt_color, \n   pants.pants_color\nFROM shirts\nCROSS JOIN pants;\n\n# Union \nSELECT * \nFROM table1\nUNION\nSELECT *\nFROM table2;\n\n#With statement\nWITH previous_query AS (\n   SELECT customer_id,\n      COUNT(subscription_id) AS 'subscriptions'\n   FROM orders\n   GROUP BY customer_id\n)\nSELECT customers.customer_name, \n   previous_query.subscriptions\nFROM previous_query\nJOIN customers\n  ON previous_query.customer_id = customers.customer_id;",
+			"file": "/Users/mac/Documents/Code/Codecademy/Data Science/SQL/SQL.sql",
+			"file_size": 1705,
+			"file_write_time": 132464494390000000,
+			"settings":
+			{
+				"buffer_size": 1705,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mac/Documents/Code/Codecademy/Data Science/Python/cheatsheet.py",
+			"settings":
+			{
+				"buffer_size": 2447,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include<bits/stdc++.h>\nusing namespace std;\n\n/* - Probar y aprender de manera gráfica códigos para \nsaber como funcionan bien los vectores \n- Probar tomar apuntes con markdown o jupyter notebook */\n\nint main(){ // Vectores, arreglos dinámicos\n\tint n ;\n\tcin >> n;\n\tvector< int > vec(n);\n\n\t// Funciones eficientes\n\tvec[0] = 1;\n\tcout << vec[0] << \"\\n\";\n\n\t// push_back\n\tvector< int > vec2;\n\tvec.push_back(3);\n\n\t//pop_back \t(elimina al de atrás)\n\tvec2.pop_back();\n\n\t// Función que decaen un poco\n\n\t// Insert\n\tvec.insert(vec.begin() + 2, 4)\n\tcout << vec[2] << \"\\n\";\n\n\t// Erase\n\tvec.erase(vec.begin() + 2);\n\tfor(int i = 0; i < n; i++){\n\t\tcout << vec[i] << \" \";\n\t} \n\tcout << endl;\n\n\t\n\t//Forma 1\n\tint n2;\n\tcin >> n2;\n\tvector< int > manu(n2);\n\tfor(int i = 0; i < n2; i++){\n\t\tcin << manu[i] << \" \";\n\t} cout << \"\\n\";\n//Corregir este code comparando con el \n\t\n\t//Forma 2 cout\n\tcout << \"Forma 2\\n\";\n\tfor(int i = 0; i < n2; i++){\n\t\tint aux;\n\t\tcin >> aux;\n\t\tmanu2.push_back(aux);\n\t}\n\tcout << \"\\n\"\n\n\n\n\t// 'Pilas y Colas' or 'Stack & Queue'\n\tstack< int > pilita;\n\n\tpilita.push(1);\n\tpilita.push(2);\n\tpilita.push(3);\n\tcout << pilita.top() << \"\\n\";\n\n\tpilita.empty(); // Return bool of 'pilita' is empty\n\twhile(!pilita.empty()){\n\t\tcout << pilita.top() << \"\\n\";\n\t\tpilita.pop();\n\t}\n\t\n\n\tqueue< int > colita;\n\n\tcolita.push(1);\n\tcolita.push(2);\n\tcolita.push(3);\n\tcolita.push(4);\n\n\twhile(!colita.empty()){\n\t\tcout << colita.front() << \" \";\n\t\tcolita.pop();\n\t}\n\tcout << \"\\n\";\n\n\n\tset< int > conjunto;\n\tconjunto.insert(20);\n\n\tcout << *conjunto.find(20) << endl;\n\n\treturn 0;\n}\n\nvoid ThrowingCardsAway(){\n\n\tint n;\n\tcin >> n;\n\twhile(n != 0){\n\t\tqueue< int > deck;\n\t\tqueue< int > discard;\n\n\t\tfor(int i = 1; i <= n; i++){\n\t\t\tdeck.push(i);\n\t\t}\n\n\t\tbool booli; //Bool(False: 0, True: 1)\n\t\tbooli = true;\n\n// Action 1: Sacar carta y ponerla en discard -> booleano sea verdadero\n// Action 2: Tomar top y mandarlo al final -> booleano sea falso\n\t\tcout << \"Discarded cards: \";\n\t\twhile(deck.size() > 1){\n\t\t\tif(booli == true){\n\t\t\t\tint aux = deck.front(); // Cartita que queremos descartar\n\t\t\t\tif(deck.size() == 2)\n\t\t\t\t\tcout << aux << \"\\n\";\n\t\t\t\telse\n\t\t\t\t\tcout << aux << \", \";\n\n\t\t\t\tdeck.pop();\n\t\t\t\tbooli = false;\n\t\t\t} else {\n\t\t\t\tint aux = deck.front(); // Cartita que pasamos para adelante\n\t\t\t\tdeck.push(aux);\n\t\t\t\tdeck.pop();\n\t\t\t\tbooli = true;\n\t\t\t}\n\t\t}\n\t\tcout << \"Remaining cards: \" << deck.front() << \"\\n\";\n\t\tcin >> n;\n\t}\n\t//return 0;\n}\n\n//vec[-1] de Python con C++\nvec[vec.size() - 1]\n\n#include <bits/stdc++.h>\nusing namespace std;\nint main(){ // Problem B\n\tint alfa[3001], beta[3001], n;\n\n\twhile(cin >> n){\n\t\tfor(int i = 0; i < n; i++)cin >> alfa[i];\n\t\tint x = 1;\n\t\tfor(int i = 1; i < n; i++){\n\t\t\tbeta[x++] = abs(alfa[i] - alfa[i-1]);\n\t\t}\n\t\tsort(beta+1,beta+x);\n\t\tbool caca = true;\n\n\t\tfor(int i = 1; i < x; i++){\n\t\t\tif(beta[i] != i){\n\t\t\t\tcaca = false;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\tif(caca)cout << \"Jolly\" << endl;\n\t\telse cout << \"Not jolly\" << endl;\n\t}\n\treturn 0;\n}\n\n\n\n",
+			"file": "/Users/mac/Documents/OCI/Clases/3.cpp",
+			"file_size": 2921,
+			"file_write_time": 132468416130000000,
+			"settings":
+			{
+				"buffer_size": 2915,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main(){ // Problem B\n\tint alfa[3001], beta[3001], n;\n\n\twhile(cin >> n){\n\t\tfor(int i = 0; i < n; i++)cin >> alfa[i];\n\t\tint x = 1;\n\t\tfor(int i = 1; i < n; i++){\n\t\t\tbeta[x++] = abs(alfa[i] - alfa[i-1]);\n\t\t}\n\t\tsort(beta+1,beta+x);\n\t\tbool caca = true;\n\n\t\tfor(int i = 1; i < x; i++){\n\t\t\tif(beta[i] != i){\n\t\t\t\tcaca = false;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\tif(caca)cout << \"Jolly\" << endl;\n\t\telse cout << \"Not jolly\" << endl;\n\t}\n\treturn 0;\n}\n\n",
+			"file": "/Users/mac/Documents/OCI/Clases/test.cpp",
+			"file_size": 473,
+			"file_write_time": 132468420540000000,
+			"settings":
+			{
+				"buffer_size": 476,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "#include<stdio.h>"
+			}
+		},
+		{
+			"file": "/Users/mac/Documents/OCI/I_Wanna.cpp",
+			"settings":
+			{
+				"buffer_size": 295,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "from cs50 import SQL\n\ndb = SQL(\"sqlite://students.db\")\n'''\nUse csv.reader or csv.DictReader \nUse the split() method on strings to split into words\nUse None for student's middle name if theu don't have one\nUse db.execute() to INSERT a row into the table\n'''\n\n",
+			"settings":
+			{
+				"buffer_size": 258,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mac/Documents/Code/Codecademy/Data Science/WorldCupData.py",
+			"settings":
+			{
+				"buffer_size": 635,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mac/boveda/boveda.py",
+			"settings":
+			{
+				"buffer_size": 6199,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"disc",
+				"Discord Rich Presence: Reconnect to Discord"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"disco",
+				"Discord Rich Presence: Reconnect to Discord"
+			],
+			[
+				"discord",
+				"Discord Rich Presence: Reconnect to Discord"
+			],
+			[
+				"discor",
+				"Preferences: Discord Rich Presence Settings"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"di",
+				"Discord Rich Presence: Reconnect to Discord"
+			],
+			[
+				"",
+				"Discord Rich Presence: Reconnect to Discord"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/Users/mac/Documents/OCI/Clases/2.cpp",
+		"/Users/mac/Documents/Code/COMFUT/data_visualization.py",
+		"/Users/mac/Documents/Code/COMFUT/csv-to-SQL.py",
+		"/Users/mac/Desktop/DATA BASE/csv_to_Sql.py",
+		"/Users/mac/Documents/Code/Codecademy/Data Science/goals.csv",
+		"/Users/mac/Documents/Code/Codecademy/Data Science/WorldCupMatches.csv",
+		"/Users/mac/Desktop/pnacho.py",
+		"/Users/mac/Documents/OCI/Clases/excercise.py",
+		"/Users/mac/Documents/OCI/Clases/ArmyBuddies.cpp",
+		"/Users/mac/Desktop/orion3d.py",
+		"/Users/mac/Desktop/untitled.py",
+		"/Users/mac/Documents/Code/HTML/iMailG2.html",
+		"/Users/mac/Documents/OCI/I_Wanna.cpp",
+		"/Users/mac/Documents/OCI/TS.py",
+		"/Users/mac/Documents/OCI/Nastya_and_Rice.cpp",
+		"/Users/mac/Documents/OCI/Queue.cpp",
+		"/Users/mac/Documents/OCI/Nineteen.cpp",
+		"/Users/mac/Documents/OCI/Tricky_Sum.cpp",
+		"/Users/mac/Documents/Code/HTML/countdown.html",
+		"/Users/mac/Documents/Code/C/cash.c",
+		"/Users/mac/Documents/Code/SQL/Comisiones.sql",
+		"/Users/mac/Library/Application Support/Sublime Text 3/Packages/User/DiscordRichPresence.sublime-settings",
+		"/Users/mac/Library/Application Support/Sublime Text 3/Packages/Discord Rich Presence/DiscordRichPresence.sublime-settings",
+		"/Users/mac/Documents/OCI/Fill_Diam.cpp",
+		"/Users/mac/Documents/out/AI - Raspberry/Rasp AI Proyect/grabcut.py",
+		"/Users/mac/Desktop/BigDATA Champions only/R_Cheatsheet",
+		"/Users/mac/Ethical Hacking/wifi_tool.py",
+		"/Users/mac/Desktop/others/wifi_tool.py",
+		"/Users/mac/Library/Application Support/Sublime Text 3/Packages/Timenow/Timenow.sublime-settings",
+		"/Users/mac/Library/Application Support/Sublime Text 3/Packages/User/Timenow.sublime-settings",
+		"/Users/mac/Documents/Code/Python/matplotlib/firstPlot.py",
+		"/Users/mac/Documents/Code/Python/matplotlib/sublime_limes.py",
+		"/Users/mac/Downloads/Script Laboratorio 4.R",
+		"/Users/mac/Desktop/testinggs.py",
+		"/Users/mac/Desktop/DATA BASE/queries.py",
+		"/Users/mac/Desktop/DATA BASE/queries2.py",
+		"/Users/mac/Desktop/DATA BASE/comfisPLT.py",
+		"/Users/mac/Desktop/comfisPLT.py",
+		"/Users/mac/Desktop/wifi_tool.py",
+		"/Users/mac/Desktop/fer_code.py",
+		"/Users/mac/Documents/Code/Python/deauthSca.py",
+		"/Users/mac/Documents/Code/Python/vcard.py",
+		"/Users/mac/Desktop/bool True.py",
+		"/Users/mac/Desktop/aclu_separations.csv",
+		"/Users/mac/Desktop/ACLU_Child_Separation.Rmd",
+		"/Users/mac/Desktop/testingg.py",
+		"/Users/mac/Desktop/AI - Raspberry/Rasp AI Proyect/grabcut.py",
+		"/Users/mac/Desktop/AI - Raspberry/Rasp AI Proyect/webcam_code.py",
+		"/Users/mac/Desktop/testing2.py",
+		"/Users/mac/Desktop/testing.py",
+		"/Users/mac/Documents/Code/Python/myInstaloader.py",
+		"/Users/mac/Desktop/AI - Raspberry/webcam_code.py",
+		"/Users/mac/Documents/Code/Python/instaloader.py",
+		"/Users/mac/Desktop/AI - Raspberry/grabcut.py",
+		"/Users/mac/Documents/Code/Python/try2.py",
+		"/Users/mac/Documents/Code/Python/pywhatkit_dbs.txt",
+		"/Users/mac/Documents/Code/Python/wspAuto.py",
+		"/Users/mac/Documents/Code/C/readability.c",
+		"/Users/mac/Downloads/facerec/face_rec.py",
+		"/Users/mac/Desktop/try2.py",
+		"/Users/mac/Desktop/try.py",
+		"/Users/mac/Desktop/try3.py",
+		"/Users/mac/Downloads/face-recognition-python-master/face_rec.py",
+		"/Users/mac/Desktop/file.c",
+		"/Users/mac/Documents/Code/Python/comfut.py",
+		"/Users/mac/Documents/Code/C/filter.c",
+		"/Users/mac/Desktop/file.py",
+		"/Users/mac/Documents/COMFUT/COMFUT_TABLE.sql",
+		"/Users/mac/Desktop/info.plist",
+		"/Users/mac/Downloads/sqlite.py",
+		"/Users/mac/Desktop/remove.py",
+		"/Users/mac/Desktop/comfutCreate.py",
+		"/Users/mac/Documents/Code/Python/getIPAddress.py",
+		"/Users/mac/Desktop/comfut.py",
+		"/Users/mac/Documents/Code/CS50's/Python/dna.py",
+		"/Users/mac/Documents/Code/SQL/Funnel:Churne.sql",
+		"/Users/mac/Documents/Code/SQL/churnRateSegmented.sqlite",
+		"/Users/mac/.bash_profile",
+		"/Users/mac/Desktop/source ~:.bash_profile"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"merge",
+			"caca",
+			"peo",
+			"queu",
+			"[]",
+			"erica",
+			"booli",
+			"true",
+			"emp",
+			"i",
+			"Fo",
+			"1",
+			"n",
+			");\n",
+			"old_name",
+			"ps",
+			"npimpa",
+			"numeros",
+			"i",
+			"int",
+			"RETUR",
+			"05",
+			"True",
+			"''''''\n",
+			"'''''''",
+			"graph",
+			"num",
+			"line",
+			"hobbies",
+			"name",
+			"numnber",
+			"distinct",
+			"firs",
+			"Count",
+			"print",
+			"target",
+			"True",
+			"print",
+			"target",
+			"2020090320250903",
+			"m_age",
+			"ax2",
+			"32",
+			"linear",
+			")\n",
+			"m_age",
+			"w_age",
+			"m_age",
+			"9zzzZZZZZZZzzzzZZZZZZ",
+			"elen",
+			"en",
+			"personas",
+			"max_age",
+			"flat_fallec",
+			"fetchall",
+			"max_age",
+			"print",
+			"list",
+			"max_age",
+			"min_age",
+			"max_age",
+			"i",
+			"age",
+			"max_age",
+			"MAXIMUM",
+			"min_age",
+			"daata",
+			"savefig",
+			"figsize",
+			"salteblue",
+			"barwidth",
+			"Poblacion",
+			"Casos",
+			"Fallecidos",
+			"Cantidad",
+			"por",
+			"persona",
+			"Poblacion",
+			"Cantidad",
+			"persona",
+			"Cantidad",
+			"Mujeres",
+			"Poblacion",
+			"Femenino",
+			"paises",
+			"Womens",
+			"darkred",
+			"womans",
+			"weomen",
+			"paises",
+			"for",
+			"cur",
+			"MENS",
+			"aoc",
+			"test_tot",
+			"NUMERIC",
+			"tex",
+			"NUMERIC",
+			"agua_potable",
+			"NUMERIC",
+			"mort_adultos",
+			"NUMERIC",
+			"mort_inf",
+			"NULL",
+			"NUMERIC",
+			"pib_pc",
+			"NUMERIC"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/mac/Desktop/test/test.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								104,
+								53
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/mac/Documents/Code/Codecademy/Data Science/Seaborn.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1990,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1253,
+								1253
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "numpy.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"auto_name": "import numpy as np",
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/mac/Documents/Code/Codecademy/Data Science/SQL/SQL.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1705,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1241,
+								1241
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/mac/Documents/Code/Codecademy/Data Science/Python/cheatsheet.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1556,
+								1487
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 773.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/mac/Documents/OCI/Clases/3.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2915,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2824,
+								2824
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2218.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/mac/Documents/OCI/Clases/test.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								125
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#include<stdio.h>",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/mac/Documents/OCI/I_Wanna.cpp",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								24
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								258,
+								258
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/mac/Documents/Code/Codecademy/Data Science/WorldCupData.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 635,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								634,
+								634
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Users/mac/boveda/boveda.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6199,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4538,
+								4538
+							]
+						],
+						"settings":
+						{
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 117.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 120.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "numpy.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 154.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
