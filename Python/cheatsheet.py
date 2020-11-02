@@ -32,7 +32,9 @@ df['MyColumnName'] # Select a column
 
 df[['Column1', 'Column2']] # Select multiple columns
 
-df.iloc[3] # Selecting range(0,3) rows 
+df.iloc[3] # Selecting only row with id 3; id starts from 0
+	
+df.iloc[0:3] # Selecting range(0,3) rows 
 
 df[(df.age < 30) |
    (df.name == 'Martha Jones')] # Selecting rows with logic 
