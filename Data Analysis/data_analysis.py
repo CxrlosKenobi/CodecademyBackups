@@ -9,7 +9,7 @@ csv_array = np.genfromtxt('sample.csv', delimiter=',') # Getting an array from a
 student_scores = np.array([[92, 94, 88, 91, 87],
                            [79, 100, 86, 93, 91],
                            [87, 85, 72, 90, 92]]) # Two dimensional array with NumPy
-seventy_nine = student_scores[2,0] # array[row,column]
+seventy_nine = student_scores[1,0] # array[row,column]
 sorted_temps = np.sort(temps) # Sorting the temp's array
 
 
