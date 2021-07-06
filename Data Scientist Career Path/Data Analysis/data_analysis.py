@@ -2,6 +2,19 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 from scipy.stats import iqr
+from sklearn.preprocessing import PowerTransformer
+
+data = [1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4]
+# log transform
+log_data = np.log(data)
+ 
+print(log_data)
+# 0, 0, 0, 0, 0.693, 0.693, 0.693, 1.098, 1.098, 1.386, 1.386
+
+
+# log transform 
+log_transform = PowerTransformer()
+log_transform.fit_transform(data)
 
 
 example_array = np.array([24, 16, 30, 10, 12, 28, 38, 2, 4, 36]) # NumPy Array
